@@ -56,7 +56,7 @@ class HomeFragment : Fragment() {
                     binding.layoutState.pbLoading.isVisible = false
                     binding.layoutState.tvError.isVisible = false
                     binding.rvMovie.apply {
-                        layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+                        layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
                         adapter = adapterMovie
                     }
                     it.payload?.let { data ->

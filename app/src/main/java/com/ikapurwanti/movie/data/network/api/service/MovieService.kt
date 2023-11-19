@@ -11,7 +11,6 @@ import retrofit2.http.GET
 import java.util.concurrent.TimeUnit
 
 interface MovieService {
-
     @GET("dummy_videos.json")
     suspend fun getMovies(): MovieResponse
 

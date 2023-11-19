@@ -90,7 +90,6 @@ class DetailActivity : AppCompatActivity() {
             binding.tvMovieTitle.text = movie.title
             binding.tvMovieDesc.text = movie.description
         }
-
     }
 
     companion object {
