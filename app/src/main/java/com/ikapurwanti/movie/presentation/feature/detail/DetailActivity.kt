@@ -34,8 +34,14 @@ class DetailActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         showDetailMenu(viewModel.movie)
-
         preparePlayer(viewModel.movie)
+        setOnClickListener()
+    }
+
+    private fun setOnClickListener() {
+        binding.ivBack.setOnClickListener {
+            onBackPressed()
+        }
     }
 
     @SuppressLint("UnsafeOptInUsageError")
@@ -83,6 +89,13 @@ class DetailActivity : AppCompatActivity() {
         super.onPause()
         releasePlayer()
         preparePlayer(viewModel.movie)
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        releasePlayer()
+        preparePlayer(viewModel.movie)
+
     }
 
     private fun showDetailMenu(movie: VideoViewParam?) {
